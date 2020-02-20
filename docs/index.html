@@ -19,10 +19,10 @@ for (i = 0; i < potencjalne_pizdosiaki.length; i++) {
 }
 }
         if(do_pieca){
-        result_string = '<div>';
-            for (i = 0; i < do_pieca.length; i++) { result_string = result_string + do_pieca[i];
+        result_string = '';
+            for (i = 0; i < do_pieca.length; i++) { result_string = result_string + do_pieca[i] + '\n';
                                                   
-                                                  do_piecyka.value = String(do_pieca).replace(',','\n');
+                                                  do_piecyka.value = String(result_string).replace(',','\n');
                                                   }
         }
 }
