@@ -3,9 +3,9 @@
         <title>Pizdosiaki</title>
     </head>
     <body>
-        <textarea rows="4" cols="50" id="pizdosiaki" oninput="init();"></textarea>
-        <br>
-        <textarea rows="4" cols="50" id="piecyk" oninput="init();"></textarea>
+        <textarea rows="8" cols="150" id="pizdosiaki" oninput="init();"></textarea>
+        <br style = "height: 100px">
+        <textarea rows="8" cols="150" id="piecyk" oninput="init();"></textarea>
 
 <script>
     do_piecyka = document.querySelector("#piecyk");
@@ -21,7 +21,8 @@ for (i = 0; i < potencjalne_pizdosiaki.length; i++) {
         if(do_pieca){
         result_string = '<div>';
             for (i = 0; i < do_pieca.length; i++) { result_string = result_string + do_pieca[i];
-                                                  do_piecyka.value = do_pieca;
+                                                  
+                                                  do_piecyka.value = String(do_pieca).replace(',','\n');
                                                   }
         }
 }
