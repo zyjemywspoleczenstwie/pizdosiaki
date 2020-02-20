@@ -5,10 +5,10 @@
     <body>
         <textarea rows="4" cols="50" id="pizdosiaki" oninput="init();"></textarea>
         <br>
-        <textarea rows="4" cols="50" id="do_piecyka" oninput="init();"></textarea>
+        <textarea rows="4" cols="50" id="piecyk" oninput="init();"></textarea>
 
 <script>
-    do_piecyka = document.querySelector("#do_piecyka");
+    do_piecyka = document.querySelector("#piecyk");
     function init(){
     potencjalne_pizdosiaki = document.querySelector("#pizdosiaki").value.replace(/\r\n/g,"\n").split("\n");
         do_pieca = Array();
