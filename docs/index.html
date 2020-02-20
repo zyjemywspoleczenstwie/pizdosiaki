@@ -6,15 +6,15 @@
         <textarea rows="4" cols="50" id="pizdosiaki" oninput="init();"></textarea>
 
 <script>
+    function init(){
+    potencjalne_pizdosiaki = document.querySelector("#pizdosiaki").value.replace(/\r\n/g,"\n").split("\n");
+}
+    
 fetch('https://raw.githubusercontent.com/zyjemywspoleczenstwie/pizdosiaki/master/pizdosiaki.json')
   .then(res => res.json())
   .then(json => {
     pizdosiaki = json 
   })
-
-function init(){
-    potencjalne_pizdosiaki = document.querySelector("#pizdosiaki").value.replace(/\r\n/g,"\n").split("\n");
-}
 </script>
     </body>
 </html>
