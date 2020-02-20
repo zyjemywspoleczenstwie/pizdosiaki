@@ -4,10 +4,26 @@
     </head>
     <body>
         <textarea rows="4" cols="50" id="pizdosiaki" oninput="init();"></textarea>
+        <br>
+        <textarea rows="4" cols="50" id="do_piecyka" oninput="init();"></textarea>
 
 <script>
+    do_piecyka = document.querySelector("#do_piecyka");
     function init(){
     potencjalne_pizdosiaki = document.querySelector("#pizdosiaki").value.replace(/\r\n/g,"\n").split("\n");
+        do_pieca = Array();
+
+for (i = 0; i < potencjalne_pizdosiaki.length; i++) { 
+  if(pizdosiaki.includes(potencjalne_pizdosiaki[i])){
+    do_pieca.push(potencjalne_pizdosiaki[i])
+}
+}
+        if(do_pieca){
+        result_string = '<div>';
+            for (i = 0; i < do_pieca.length; i++) { result_string = result_string + do_pieca[i];
+                                                  do_piecyka,value = do_pieca;
+                                                  }
+        }
 }
     
 fetch('https://raw.githubusercontent.com/zyjemywspoleczenstwie/pizdosiaki/master/pizdosiaki.json')
@@ -15,6 +31,8 @@ fetch('https://raw.githubusercontent.com/zyjemywspoleczenstwie/pizdosiaki/master
   .then(json => {
     pizdosiaki = json 
   })
+    
+    
 </script>
     </body>
 </html>
