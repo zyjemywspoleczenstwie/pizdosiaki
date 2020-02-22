@@ -20,7 +20,8 @@ function init() {
     url = url.split('&')[0]} else {
  url = url.split('?')[0]}
         if (pizdosiaki.includes(url)) {
-            do_pieca.push(url)
+            if(!do_pieca.includes(url)){
+            do_pieca.push(url)}
         }
     }
     if (do_pieca) {
