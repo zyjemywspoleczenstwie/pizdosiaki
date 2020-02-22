@@ -9,22 +9,28 @@
 
 <script>
     do_piecyka = document.querySelector("#piecyk");
-    function init(){
-    potencjalne_pizdosiaki = document.querySelector("#pizdosiaki").value.replace(/\r\n/g,"\n").split("\n");
-        do_pieca = Array();
 
-for (i = 0; i < potencjalne_pizdosiaki.length; i++) { 
-  if(pizdosiaki.includes(potencjalne_pizdosiaki[i])){
-    do_pieca.push(potencjalne_pizdosiaki[i])
-}
-}
-        if(do_pieca){
-        result_string = '';
-            for (i = 0; i < do_pieca.length; i++) { result_string = result_string + do_pieca[i] + '\n';
-                                                  
-                                                  do_piecyka.value = String(result_string).replace(',','\n');
-                                                  }
+function init() {
+    potencjalne_pizdosiaki = document.querySelector("#pizdosiaki").value.replace(/\r\n/g, "\n").split("\n");
+    do_pieca = Array();
+
+    for (i = 0; i < potencjalne_pizdosiaki.length; i++) {
+    url = potencjalne_pizdosiaki[i]
+    if(url.includes('profile.php')){
+    url = url.split('&')[0]} else {
+ url = url.split('?')[0]}
+        if (pizdosiaki.includes(url)) {
+            do_pieca.push(url)
         }
+    }
+    if (do_pieca) {
+        result_string = '';
+        for (i = 0; i < do_pieca.length; i++) {
+            result_string = result_string + do_pieca[i] + '\n';
+
+            do_piecyka.value = String(result_string).replace(',', '\n');
+        }
+    }
 }
     
 fetch('https://raw.githubusercontent.com/zyjemywspoleczenstwie/pizdosiaki/master/pizdosiaki.json')
